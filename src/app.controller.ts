@@ -64,6 +64,35 @@ export class AppController {
       message: 'New item creation is successfull!',
       data: this.productDB,
     };
-
   }
+
+
+  @Get('statistics')
+  @Render('statistics')
+  getStatistics(){
+    let totalPrice:number = 0
+    let itemCount:number = this.productDB.length
+
+    let allPrices:number[] = []
+    
+    this.productDB.forEach((a) => {totalPrice += a.price, allPrices.push(a.price)})
+
+    let avgPrice = (totalPrice / itemCount).toFixed(0)
+
+    let expensie = allPrices?.sort((a, b) => b - a).at(0)
+    let cheap = allPrices?.toSorted((a, b) => a - b)[0]
+    
+    
+    //let cheap = this.productDB.toSorted((a, b) => a.price - b.price).filter(a => a.price)[0]
+
+    //this.productDB.reduce((a, b) => parseInt(a.price) + parseInt(b.price)) / productDB.length
+    return{
+      title: "Statistics",
+      itemCount,
+      avgPrice,
+      expensie,
+      cheap
+    }
+  }
+
 }
