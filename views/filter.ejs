@@ -11,6 +11,20 @@
 <body>
     <h1><%= title %></h1>
     <br>
+    <form action="/filter">
+        <label for="catFilter">Category Selection:</label><br>
+        <select type="text" id="catFilter" name="catFilter">
+            <option selected value="">Select an option</option>
+            <option value="elektronika">Elektronika</option>
+            <option value="ruházat">Ruházat</option>
+            <option value="könyv">Könyv</option>
+            <option value="játék">Játék</option>
+        </select>
+        <br>
+        <button type="submit">Filter</button>
+    </form>
+    <br>
+    <br>
     <table>
         <thead>
             <tr>
@@ -41,7 +55,7 @@
     </table>
     <br>
     <br>
-    <a href="/filter" target="_self"><button>Filter Page</button></a><br>
+    <a href="/" target="_self"><button>Home Page</button></a><br>
     <a href="/newItem" target="_self"><button>Add new Item</button></a>
 </body>
 </html>

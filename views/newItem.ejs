@@ -11,6 +11,29 @@
 <body>
     <h1><%= title %></h1>
     <br>
+    <form method="post">
+        <label for="name">Item's name:</label><br>
+        <input type="text" id="name" name="name">
+        <br><br>        
+        <label for="category">Item's cat.:</label><br>
+        <select type="text" id="category" name="category">
+            <option selected value="">Select an option</option>
+            <option value="elektronika">Elektronika</option>
+            <option value="ruházat">Ruházat</option>
+            <option value="könyv">Könyv</option>
+            <option value="játék">Játék</option>
+        </select>
+        <br><br>
+        <label for="price">Item's price:</label><br>
+        <input type="number" id="price" name="price">
+        <br><br>   
+        <label for="stock">Item's stock:</label><br>
+        <input type="text" id="stock" name="stock">
+        <br><br>   
+        <button type="submit">Filter</button>
+    </form>
+    <br>
+    <br>
     <table>
         <thead>
             <tr>
@@ -40,8 +63,9 @@
         </tbody>
     </table>
     <br>
+    <p style="color: green;"><%= message  %></p>
     <br>
-    <a href="/filter" target="_self"><button>Filter Page</button></a><br>
-    <a href="/newItem" target="_self"><button>Add new Item</button></a>
+    <a href="/" target="_self"><button>Home Page</button></a><br>
+    <a href="/filter" target="_self"><button>Filter Page</button></a>
 </body>
 </html>
